@@ -88,12 +88,12 @@ struct matrix * generate_sphere(double cx, double cy, double cz,
   struct matrix * sphere = new_matrix(4, 4);
   double x, y, z;
   int p, t;
-  for ( p = 0 ; p < step /* 2 * M_PI*/ ; p++ ) {
-    for ( t = 0 ; t < step /* M_PI*/ ; t++ ) {
+  for ( p = 0 ; p < step ; p++ ) {
+    for ( t = 0 ; t < step ; t++ ) {
       x = r * cos(t / M_PI) + cx;
       y = r * sin(t / M_PI) * cos(p / 2 / M_PI) + cy;
       z = r * sin(t / M_PI) * sin(p / 2 / M_PI) + cz;
-      add_edge(sphere, x, y, z, x+1, y, z);
+      add_edge(sphere, x, y, z, x, y, z);
     }
   }
   return sphere;
