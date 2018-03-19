@@ -22,7 +22,7 @@ parser.o: parser.c parser.h matrix.h draw.h display.h ml6.h
 	$(CC) $(CFLAGS) -c parser.c
 
 run: all
-	./main script
+	./main thing
 clean:
 	rm main
 	rm *.o *~
